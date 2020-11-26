@@ -1,0 +1,26 @@
+{% extends 'cuenta/base.html' %}
+{% block content %}     
+{% block main %}
+{% if formulario1.errors or formulario2.errors %}
+{{ formulario1.errors }}
+{{ formulario2.errors }}
+{% endif %}
+<form action="/crearUsuario/" method="post">
+    {% csrf_token %}
+    <section class="card mt-5">
+        <article class="card-body">
+            {% for campo in formulario1 %}
+            <div class="form-group">
+                <label for="campo.is_for_label">{{ campo.label }}</label>
+                {{ campo }}
+            </div>
+            {% endfor %}
+        </article>
+
+    </section>
+    <!-- {{ formulario1 }} -->
+    {{ formulario2 }}
+    <input type="submit" class="btn btn-info btn-block" value="Registrar">
+</form>
+{% endblock main %}
+{% endblock content %}  

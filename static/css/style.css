@@ -1,0 +1,7 @@
+header {
+    background: url(../img/eyeglasses-wall.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: 700px;
+    /*color: white;*/
+}

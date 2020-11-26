@@ -1,0 +1,9 @@
+{% include 'cuenta/base.html' %}
+{% block main %}
+    <form action="" method="POST" enctype="multipart/form-data">
+        {{ formulario.as_p }}
+        {% csrf_token %}
+        <input type="submit">
+    </form>
+    <a href="/productos/listar/">Volver</a>
+{% endblock main %}                                                                                                                                                                                                                                                                                                                     

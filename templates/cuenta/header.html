@@ -1,0 +1,60 @@
+<!-- Barra de navegación -->
+{% load static %}
+<header>
+    <nav class="nav-wrapper grey darken-4">
+            <ul class="left">
+            <img class="logo" src="{% static 'img/glasses-icon-62px.png' %}">
+            <a href="/" class="brand-logo hoverable hide-on-small-only">Óptica-Marfull.cl</a>
+          </ul>
+            {% if user.is_authenticated %}
+                {% if user.is_superuser %}
+                <ul class="right">
+                    <!-- Gatillador del efecto "Dropdown". -->
+                    <a class='dropdown-trigger btn light-blue darken-4 hide-on-med-and-down' data-target='dropdown1'>Manejo de inventario</a>
+                    <a class='dropdown-trigger btn light-blue darken-4 hide-on-large-only' data-target='dropdown1'><i class="material-icons">local_shipping</i></a>
+                    <!-- Cada uno de los sub-menús con las opciones de despacho. -->
+                    <ul id='dropdown1' class="dropdown-content">
+                        <li><a class="black-text" href="/productos/listar/">Manejo inventario</a></li>
+                        <li><a class="black-text" href="/salir/">Salir</a></li>
+                    </ul>
+                    <a class="tooltipped btn light-blue darken-4 white-text hide" href="https://www.google.com/maps/d/edit?mid=1tIuu_DE0SZ5D9vtdBQfyac6hM3p4S407&usp=sharing" data-position="bottom" data-tooltip="¡Encuéntranos!">
+                        <i class="material-icons">location_on</i></a>
+                    <a class="tooltipped btn-floating pulse blue darken-1" href="tel:56978129471" data-position="bottom" data-tooltip="Call Center: +56 9 7812 9471">
+                        <i class="material-icons">local_phone</i></a>
+                </ul>
+                {% else %}
+                <ul class="right">
+                    <!-- Gatillador del efecto "Dropdown". -->
+                    <a class='dropdown-trigger btn light-blue darken-4 hide-on-med-and-down' data-target='dropdown1'>Pedidos</a>
+                    <a class='dropdown-trigger btn light-blue darken-4 hide-on-large-only' data-target='dropdown1'><i class="material-icons">local_shipping</i></a>
+                    <!-- Cada uno de los sub-menús con las opciones de despacho. -->
+                    <ul id='dropdown1' class="dropdown-content">
+                        <li><a class="black-text" href="/pedidos/pedidos/">Consultar pedidos</a></li>
+                        <li><a class="black-text" href="/salir/">Salir</a></li>
+                        
+                    </ul>
+                    <a class="tooltipped btn light-blue darken-4 white-text hide" href="https://www.google.com/maps/d/edit?mid=1tIuu_DE0SZ5D9vtdBQfyac6hM3p4S407&usp=sharing" data-position="bottom" data-tooltip="¡Encuéntranos!">
+                        <i class="material-icons">location_on</i></a>
+                    <a class="tooltipped btn-floating pulse blue darken-1" href="tel:56978129471" data-position="bottom" data-tooltip="Call Center: +56 9 7812 9471">
+                        <i class="material-icons">local_phone</i></a>
+                        {% endif %}
+
+            {% else %}
+            <ul class="right">
+                <!-- Gatillador del efecto "Dropdown". -->
+                <a class='dropdown-trigger btn light-blue darken-4 hide-on-med-and-down' data-target='dropdown1'>Sesion</a>
+                <a class='dropdown-trigger btn light-blue darken-4 hide-on-large-only' data-target='dropdown1'><i class="material-icons">local_shipping</i></a>
+                <!-- Cada uno de los sub-menús con las opciones de despacho. -->
+                <ul id='dropdown1' class="dropdown-content">
+                    <li><a class="black-text" href="/registro/">Registrar</a></li>
+                    <li><a class="black-text" href="/iniciarSesion/">Login</a></li>
+                    
+                </ul>
+                <a class="tooltipped btn light-blue darken-4 white-text hide" href="https://www.google.com/maps/d/edit?mid=1tIuu_DE0SZ5D9vtdBQfyac6hM3p4S407&usp=sharing" data-position="bottom" data-tooltip="¡Encuéntranos!">
+                    <i class="material-icons">location_on</i></a>
+                <a class="tooltipped btn-floating pulse blue darken-1" href="tel:56978129471" data-position="bottom" data-tooltip="Call Center: +56 9 7812 9471">
+                    <i class="material-icons">local_phone</i></a>
+            {% endif %}
+                
+    </nav>
+</header>

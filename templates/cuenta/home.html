@@ -1,0 +1,46 @@
+{% extends 'cuenta/base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+<style>
+    header {
+    background: url('/static/img/eyeglasses-wall.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 700px;
+    /*color: white;*/
+    }
+    .wood {
+    color: white;
+    background: url(https://images.pexels.com/photos/347139/pexels-photo-347139.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-size: cover;
+    }
+
+
+</style>
+<section class="container section" id="descuentos">
+    <div class="row wood">
+        <h2 class="container center col s12 glow">¡Dale un vistazo a nuestros descuentos!</h2>
+        <div class="col s12 m6">
+            <div class="carousel hide-on-small-only">
+                <a class="carousel-item" ondblclick="verCatalogo()"><img src="{% static 'img/descuento50p.png' %}"></a>
+                <a class="carousel-item" ondblclick="verCatalogo()"><img src="{% static 'img/descuento60p.png' %}"></a>
+                <a class="carousel-item" ondblclick="verCatalogo()"><img src="{% static 'img/descuento70p.png' %}"></a>
+                <a class="carousel-item" ondblclick="verCatalogo()"><img src="{% static 'img/descuento80p.png' %}"></a>
+                <a class="carousel-item" ondblclick="verCatalogo()"><img src="{% static 'img/descuento90p.png' %}"></a>
+            </div>
+        </div>
+        <div class="col s12 m6">
+            <div class="carousel">
+                <a class="carousel-item" onclick="verCatalogo()"><img src="{% static 'img/descuento50p.png' %}"></a>
+                <a class="carousel-item" onclick="verCatalogo()"><img src="{% static 'img/descuento60p.png' %}"></a>
+                <a class="carousel-item" onclick="verCatalogo()"><img src="{% static 'img/descuento70p.png' %}"></a>
+                <a class="carousel-item" onclick="verCatalogo()"><img src="{% static 'img/descuento80p.png' %}"></a>
+                <a class="carousel-item" onclick="verCatalogo()"><img src="{% static 'img/descuento90p.png' %}"></a>
+            </div>
+          </div>
+          <a id="btnCatalogoDescuentos" type="button" class="btn"  href="/productos/listarCatalogo/">Visitar el catalogo</a>
+    </div>
+{% endblock content %}

@@ -1,0 +1,50 @@
+  {% include 'cuenta/base.html' %}
+  {% load static %}
+  
+  
+  {% block main %}
+      <h1>Listar pedidos....</h1>
+      
+      {% if pedidos %}
+      <table>
+          <thead>
+              <tr>
+                  <th>rut</th>
+                  <th>Nombre lentes</th>
+                  <th>Codigo</th>
+                  <th>Precio</th>
+                  <th>Nombre</th>
+                  <th>Apellido</th>
+                  <th>Region</th>
+                  <th>Comuna</th>
+                  <th>calle</th>
+                  <th>Depto</th>
+                  <th>acción</th>
+              </tr>
+          </thead>
+          <tbody>
+              {% for pedido in pedidos %}
+                  <tr>
+                      <td>{{ pedido.perfil.rut }}</td>
+                      <td>{{ pedido.producto.nombreLente }}</td>
+                      <td>{{ pedido.producto.codLente }}</td>
+                      <td>{{ pedido.producto.precioLente }}</td>
+                      <td>{{ pedido.perfil.usuario.first_name }}</td>
+                      <td>{{ pedido.perfil.usuario.last_name }}</td>
+                      <td>{{ pedido.perfil.region }}</td>
+                      <td>{{ pedido.perfil.comuna }}</td>
+                      <td>{{ pedido.perfil.calle }}</td>
+                      <td>{{ pedido.perfil.departamento }}</td>
+                      
+                      <td>
+                          <a href="/pedidos/eliminarPedido/{{ pedido.id }}">Eliminar</a>
+                      </td>
+                  </tr>
+              {% endfor %}
+          </tbody>
+      </table>
+          
+      {% else %}
+          <p>No hay productos....</p>
+      {% endif %}
+  {% endblock main %}
