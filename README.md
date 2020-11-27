@@ -1,4 +1,4 @@
-﻿# Óptica Marfull 3.0 :eyeglasses:
+﻿# Óptica Marfull 3.0 :sunglasses:
 [![GitHub version](https://img.shields.io/badge/version-0.1-red.svg)](https://github.com/frmarfull/optica-marfull-with-django)
 [![GitHub version](https://img.shields.io/badge/Django-3.1-green.svg)](https://github.com/frmarfull/optica-marfull-with-django)
 [![GitHub version](https://img.shields.io/badge/Python-3.7-blue.svg)](https://github.com/frmarfull/optica-marfull-with-django)
