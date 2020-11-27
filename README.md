@@ -39,7 +39,7 @@ python manage.py migrate		    # Crear las tablas de la base de datos.
 python manage.py createsuperuser 	# Esto es para crear un usuario admin que maneja inventario
 python manage.py runserver		    # Arrancar un servidor local del proyecto.
 ```
-3. En un navegador (Google Chrome, Mozilla Firefox, Opera, Edge, etc), ir a `http://127.0.0.1:8000/` para acceder al proyecto. (también es posible ingresando )
+3. En un navegador (Google Chrome, Mozilla Firefox, Opera, Edge, etc), ir a [localhost:8000](http://127.0.0.1:8000/) para acceder al proyecto. (también es posible ingresando )
 
 ### Capturas de pantalla.
 Vistas del sitio desde un computador de escritotio.
