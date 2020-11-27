@@ -55,8 +55,8 @@ Esto es sólo a modo de ejemplo, se recomienda NUNCA usar estas credenciales par
 
 | Nombre de usuario | Tipo | Contraseña |
 | :---         |     :---:      |          ---: |
-| *admin*   | administrador     | admin    |
-| user     | usuario regular       | 123456_7      |
+| **admin**   | administrador     | admin    |
+| *user*     | usuario regular       | 123456_7      |
                 
 ------------
 ### Lista de tareas terminadas y por terminar.
