@@ -80,7 +80,11 @@ WSGI_APPLICATION = 'optica.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-'''
+
+# Base de datos SQLite3. (*Para testeo*).
+DATABASES = {'default':{'ENGINE':'django.db.backends.sqlite3', 'NAME': os.path.join(BASE_DIR,'db.sqlite3'),}}
+
+''' # Base de datos MySQL (*Requiere levantamiento previo*).
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -92,7 +96,6 @@ DATABASES = {
     }
 }
 '''
-DATABASES = {'default':{'ENGINE':'django.db.backends.sqlite3', 'NAME': os.path.join(BASE_DIR,'db.sqlite3'),}}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators

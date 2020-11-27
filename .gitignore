@@ -17,3 +17,5 @@ media
 *.py[cod]
 *$py.class
 
+### DATABASES ###
+*.sqlite3
