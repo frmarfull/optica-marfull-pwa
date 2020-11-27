@@ -1,4 +1,4 @@
-﻿# Óptica Marfull 3.0
+﻿# Óptica Marfull 3.0 :eyeglasses:
 [![GitHub version](https://img.shields.io/badge/version-0.1-red.svg)](https://github.com/frmarfull/optica-marfull-with-django)
 [![GitHub version](https://img.shields.io/badge/Django-3.1-green.svg)](https://github.com/frmarfull/optica-marfull-with-django)
 [![GitHub version](https://img.shields.io/badge/Python-3.7-blue.svg)](https://github.com/frmarfull/optica-marfull-with-django)
@@ -22,7 +22,7 @@ Cómo arrancar el servidor y acceder al sitio web.
 1. Instalar `git` & `python3` en su sistema operativo.
 2. Clonar el repositorio, instalar dependencias y configurar el entorno.
 ```
-git clone https://github.com/frmarfull/optica-marfull-pwa.git		# clonar el proyecto.
+git clone https://github.com/frmarfull/optica-marfull-pwa.git   # clonar el proyecto.
 cd optica				            # ir a la ruta del proyecto.
 ```
 
@@ -34,10 +34,10 @@ pip install django-pwa              # Progressive web app
 
 Configurar la base de datos y lanzar el servidor.
 ```
-python manage.py makemigrations		# Crear archivos de las migraciones de la base de datos.
-python manage.py migrate		    # Crear las tablas de la base de datos.
-python manage.py createsuperuser 	# Esto es para crear un usuario admin que maneja inventario
-python manage.py runserver		    # Arrancar un servidor local del proyecto.
+python manage.py makemigrations     # Crear archivos de las migraciones de la base de datos.
+python manage.py migrate            # Crear las tablas de la base de datos.
+python manage.py createsuperuser    # Esto es para crear un usuario admin que maneja inventario
+python manage.py runserver          # Arrancar un servidor local del proyecto.
 ```
 3. En un navegador (Google Chrome, Mozilla Firefox, Opera, Edge, etc), ir a [localhost:8000](http://127.0.0.1:8000/) para acceder al proyecto. (también es posible ingresando )
 
