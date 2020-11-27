@@ -20,10 +20,20 @@ Sistema de gestión de cuentas e inventario de una óptica usando Django.
 Cómo arrancar el servidor y acceder al sitio web.
                 
 1. Instalar `git` & `python3` en su sistema operativo.
-2. Clonar el repositorio y configurar el entorno.
+2. Clonar el repositorio, instalar dependencias y configurar el entorno.
 ```
 git clone https://github.com/frmarfull/optica-marfull-pwa.git		# clonar el proyecto.
 cd optica				            # ir a la ruta del proyecto.
+```
+
+Instalar dependencias necesarias de Django.
+```
+pip install django-social-auth      # Mecanismo de autenticación/autorización con redes sociales.
+pip install django-pwa              # Progressive web app
+```
+
+Configurar la base de datos y lanzar el servidor.
+```
 python manage.py makemigrations		# Crear archivos de las migraciones de la base de datos.
 python manage.py migrate		    # Crear las tablas de la base de datos.
 python manage.py createsuperuser 	# Esto es para crear un usuario admin que maneja inventario
