@@ -155,5 +155,5 @@ LOGOUT_REDIRECT_URL = 'ingreso'
 SOCIAL_AUTH_FACEBOOK_KEY = '833138504087587' # Su aPP ID
 SOCIAL_AUTH_FACEBOOK_SECRET = '4cfdbbed5ea224359dfa6eef156c17f7' # SU Secret de app.
 
-
+#
 PWA_SERVICE_WORKER_PATH = join(BASE_DIR,'static','sw','serviceworker.js')
