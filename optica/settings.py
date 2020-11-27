@@ -39,18 +39,24 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social_django',
+    'pwa',
 
     'cuenta',
     'producto',
     'pedidos'
 ]
-
+AUTHENTICATION_BACKENDS = [
+    'social_core.backends.facebook.FacebookOAuth2',
+    'django.contrib.auth.backends.ModelBackend'
+]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -70,6 +76,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -82,9 +90,7 @@ WSGI_APPLICATION = 'optica.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 # Base de datos SQLite3. (*Para testeo*).
-DATABASES = {'default':{'ENGINE':'django.db.backends.sqlite3', 'NAME': os.path.join(BASE_DIR,'db.sqlite3'),}}
 
-''' # Base de datos MySQL (*Requiere levantamiento previo*).
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -95,7 +101,7 @@ DATABASES = {
         'PORT':'3306' # 3306
     }
 }
-'''
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -141,3 +147,4 @@ STATICFILES_DIRS = [join(BASE_DIR,'static')]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = join(BASE_DIR,'media')
 
+PWA_SERVICE_WORKER_PATH = join(BASE_DIR,'static','sw','serviceworker.js')
