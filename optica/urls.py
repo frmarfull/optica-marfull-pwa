@@ -23,7 +23,8 @@ urlpatterns = [
     path('', include('cuenta.urls')),
     path('productos/',include('producto.urls')),
     path('pedidos/',include('pedidos.urls')),
-    path('',include('pwa.urls'))
+    path('',include('pwa.urls')),
+    path('redes/',include('social_django.urls',namespace='redes'))
 ]
 
 if settings.DEBUG:
