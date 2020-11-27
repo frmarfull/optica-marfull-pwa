@@ -22,7 +22,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('cuenta.urls')),
     path('productos/',include('producto.urls')),
-    path('pedidos/',include('pedidos.urls'))
+    path('pedidos/',include('pedidos.urls')),
+    path('',include('pwa.urls'))
 ]
 
 if settings.DEBUG:
