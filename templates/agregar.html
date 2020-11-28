@@ -1,11 +1,11 @@
-
-                                                                   
 {% include 'cuenta/base.html' %}
-{% block content %}     
+{% block content %}
+<section class='container'>
     <form action="" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ formulario }}
         <input type="submit" value="Agregar">
     </form>
     <a href="/productos/listar/">Volver</a>
+</section>
 {% endblock content %}  

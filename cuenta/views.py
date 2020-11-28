@@ -37,6 +37,7 @@ def registroUsuario(request):
             )
             return redirect('/')
         context = {
+        'titulo':'Registrar',
         'formulario1':formulario1,
         'formulario2':formulario2
         }
@@ -77,6 +78,7 @@ def iniciarSesion(request):
                     'Usuario o contraseña son incorrectos'
                 )
     context = {
+        'titulo':'Inicio de sesión',
         'formulario':formulario
     }
     return render(

@@ -18,6 +18,10 @@
     background-size: cover;
     }
 
+    .glow {
+        color: black;
+    }
+
 
 </style>
 <section class="container section" id="descuentos">
@@ -41,6 +45,11 @@
                 <a class="carousel-item" onclick="verCatalogo()"><img src="{% static 'img/descuento90p.png' %}"></a>
             </div>
           </div>
-          <a id="btnCatalogoDescuentos" type="button" class="btn"  href="/productos/listarCatalogo/">Visitar el catalogo</a>
+          <a id="btnCatalogoDescuentos" type="button" class="btn blue"  href="/productos/listarCatalogo/">Visitar el catalogo</a>
     </div>
+    <script>
+        function verCatalogo() {
+            location.href = "/productos/listarCatalogo/";
+        };
+    </script>
 {% endblock content %}
