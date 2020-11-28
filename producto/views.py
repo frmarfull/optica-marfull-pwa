@@ -4,6 +4,10 @@ from django.contrib import messages
 from .models import Producto
 from django.contrib.auth.decorators import login_required
 from cuenta.models import User
+from requests import get as pedir
+
+api_host = 'https://free.currconv.com/api/v7/convert?'
+query = 'q=USD_CLP&compact=ultra&apiKey=dcdd1cb1219670094b55'
 
 # Create your views here.
 @login_required(login_url='/iniciarSesion/')
@@ -26,12 +30,16 @@ def listarProductos(request):
 
 def listadoCatalogo(request):
     productos = Producto.objects.all()
+    response = pedir(api_host + query)
+    USD = int(response.json()['USD_CLP'])
     context = {
         'titulo':'Catalogo',
-        'productos':productos
+        'productos':productos,        
     }
-    for producto in productos:
-        print(producto.codLente)
+    if response.status_code == 200:
+        for producto in productos:
+            conversion = round(int(producto.precioLente)/USD, 2)
+            producto.conversion =  conversion
     return render(
         request,
         'catalogo.html',

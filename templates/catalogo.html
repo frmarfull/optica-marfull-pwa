@@ -2,11 +2,17 @@
 {% load static %}
 {% block content %}
 <section >
-
+<style>
+  .card-image{
+    height:auto;
+    width: auto;
+    overflow: hidden;
+}
+</style>
     {% if productos %}
     {% for producto in productos %}
     <div class="row">
-      <div class="col s12 m7">
+      <div class="col s12 m4 l3">
         <div class="card">
           <div class="card-image">
             <img src="/media/{{ producto.imagenLente }}">
@@ -15,8 +21,10 @@
           <div class="card-content">
             <p>Nombre Lente: {{ producto.nombreLente }}</p>
             <p>Codigo Lente: {{ producto.codLente }}</p>
-            <p>Precio Lente: {{ producto.precioLente }}</p>
-            
+            <p>Precio CLP: {{ producto.precioLente }}</p>
+            {% if producto.conversion %}
+              <p>Precio USD: {{ producto.conversion }}</p>
+            {% endif %}
           </div>
           
           <div class="card-action">

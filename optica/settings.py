@@ -89,16 +89,18 @@ WSGI_APPLICATION = 'optica.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# Base de datos SQLite3. (*Para testeo*).
+# Base de datos SQLite3. (* Para testeo rápido *).
+DATABASES = {'default': {'ENGINE': 'django.db.backends.sqlite3','NAME': BASE_DIR / 'db.sqlite3',}}
 
+# Base de datos MySQL.
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'optica',
         'USER':'root',
-        'PASSWORD':'1234',
+        'PASSWORD':'root',
         'HOST':'localhost',
-        'PORT':'3306' # 3306
+        'PORT':'3306'
     }
 }
 

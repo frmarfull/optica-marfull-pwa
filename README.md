@@ -31,6 +31,7 @@ Instalar dependencias necesarias de Django.
 pip install django-social-auth      # Mecanismo de autenticación/autorización con redes sociales.
 pip install django-pwa              # Progressive web app
 ```
+** En caso de error en social-auth, usar `pip install python-social-auth[django]` para arreglar el problema.
 
 Configurar la base de datos y lanzar el servidor.
 ```
