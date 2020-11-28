@@ -1,4 +1,4 @@
-﻿# Óptica Marfull 3.0 :sunglasses:
+﻿# Óptica Marfull 3.0
 [![GitHub version](https://img.shields.io/badge/version-0.1-red.svg)](https://github.com/frmarfull/optica-marfull-with-django)
 [![GitHub version](https://img.shields.io/badge/Django-3.1-green.svg)](https://github.com/frmarfull/optica-marfull-with-django)
 [![GitHub version](https://img.shields.io/badge/Python-3.7-blue.svg)](https://github.com/frmarfull/optica-marfull-with-django)
@@ -68,3 +68,4 @@ Esto es sólo a modo de ejemplo, se recomienda NUNCA usar estas credenciales par
 - [x] Añadir manifest al proyecto.
 - [x] Añadir service worker.
 - [x] PWA usando Django.
+- [x] Relajarse y esperar lo mejor. :sunglasses:
