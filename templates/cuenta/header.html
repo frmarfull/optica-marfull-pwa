@@ -3,7 +3,7 @@
 <header>
     <nav class="nav-wrapper grey darken-4">
             <ul class="left">
-            <img class="logo" src="{% static 'img/glasses-icon-62px.png' %}">
+            <img class="logo hoverable" alt="logo" src="{% static 'img/glasses-icon-62px.png' %}" onclick="location.href='/'">
             <a href="/" class="brand-logo hoverable hide-on-small-only">Óptica-Marfull.cl</a>
           </ul>
             {% if user.is_authenticated %}
@@ -42,7 +42,7 @@
             {% else %}
             <ul class="right">
                 <!-- Gatillador del efecto "Dropdown". -->
-                <a class='dropdown-trigger btn light-blue darken-4 hide-on-med-and-down' data-target='dropdown1'>Sesion</a>
+                <a class='dropdown-trigger btn light-blue darken-4 hide-on-med-and-down' data-target='dropdown1'>Sesión</a>
                 <a class='dropdown-trigger btn light-blue darken-4 hide-on-large-only' data-target='dropdown1'><i class="material-icons">local_shipping</i></a>
                 <!-- Cada uno de los sub-menús con las opciones de despacho. -->
                 <ul id='dropdown1' class="dropdown-content">
