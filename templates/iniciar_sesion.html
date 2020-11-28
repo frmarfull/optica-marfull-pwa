@@ -1,16 +1,24 @@
 {% include 'cuenta/base.html' %}
 {% block main %}
 <section class="container">
-    <form action="" method="POST">
-      {% csrf_token %}
-      {% for campo in formulario %}
-      <div class="form-group">
-        <label for="campo.id_for_label">{{ campo.label }}</label>
-        {{campo}}
-      </div>
-      {% endfor %}
-      <input type="submit" class="btn btn-primary btn-block" value="Ingresar">
-      <a href="{% url 'redes:begin' 'facebook' %}" class="waves-effect waves-light btn">Iniciar sesión con Facebook</a>
-    </form>
+    <article class='row'>
+    <article class='card-panel center-align col s6 offset-s3'>
+        <div class="">
+            <form action="" method="POST">
+              {% csrf_token %}
+              {% for campo in formulario %}
+                <div class="input-field">
+                    {{campo}}
+                    <label for="{{ campo.id_for_label }}">{{ campo.label }}</label>
+                </div>
+              {% endfor %}
+              <input type="submit" class="black btn-large" value="Ingresar"><br><br>
+              <a href="{% url 'redes:begin' 'facebook' %}" 
+              class="waves-effect waves-light btn-large fb"
+              style="background-color: #3b5998 !important;">Iniciar sesión con Facebook</a><br><br>
+            </form>
+        </div>
+    </article>
+    </article>
   </section>
 {% endblock main %}
