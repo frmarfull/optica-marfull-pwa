@@ -90,7 +90,7 @@ WSGI_APPLICATION = 'optica.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 # Base de datos SQLite3. (* Para testeo rápido *).
-DATABASES = {'default': {'ENGINE': 'django.db.backends.sqlite3','NAME': BASE_DIR / 'db.sqlite3',}}
+#DATABASES = {'default': {'ENGINE': 'django.db.backends.sqlite3','NAME': BASE_DIR / 'db.sqlite3',}}
 
 # Base de datos MySQL.
 DATABASES = {
@@ -98,7 +98,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'optica',
         'USER':'root',
-        'PASSWORD':'root',
+        'PASSWORD':'1234',
         'HOST':'localhost',
         'PORT':'3306'
     }
@@ -149,13 +149,25 @@ STATICFILES_DIRS = [join(BASE_DIR,'static')]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = join(BASE_DIR,'media')
 
-LOGIN_URL = 'iniciarSesion/'
+LOGIN_URL = 'iniciar'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_URL = 'salir'
-LOGOUT_REDIRECT_URL = 'ingreso'
+LOGOUT_REDIRECT_URL = '/'
 
 SOCIAL_AUTH_FACEBOOK_KEY = '833138504087587' # Su aPP ID
 SOCIAL_AUTH_FACEBOOK_SECRET = '4cfdbbed5ea224359dfa6eef156c17f7' # SU Secret de app.
+
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email','user_link']
+SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
+    'fields': 'name, email,link'
+}
+SOCIAL_AUTH_FACEBOOK_EXTRA_DATA = [
+    ('name','name'),
+    ('email','email'),
+    ('link','user_link')
+]
+
+
 
 #
 PWA_SERVICE_WORKER_PATH = join(BASE_DIR,'static','sw','serviceworker.js')

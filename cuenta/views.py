@@ -3,6 +3,7 @@ from .forms import FormularioCreacion, FormularioPerfil,FormIniciarSesion
 from django.contrib import messages
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
+from .models import User
 
 def home(request):
     return render(request, 'cuenta/home.html')
@@ -109,3 +110,44 @@ def salir(request):
     logout(request)
     return redirect('/iniciarSesion/')
 
+def mostarFormularioRegistroF(request):
+    formulario2 = FormularioPerfil()
+    context = {
+        'formulario2':formulario2
+    }
+    return render(
+        request,
+        'registroFacebook.html',
+        context
+    )
+def registroUsuarioF(request):
+    if request.method == 'POST':
+        #formulario1 = FormularioCreacion(request.POST)
+        formulario2 = FormularioPerfil(request.POST)
+        if formulario2.is_valid():
+            elusuario= User.objects.get(pk=(request.user.id))
+            perfilGuardado = formulario2.save(commit=False)
+            perfilGuardado.usuario = elusuario
+            perfilGuardado.save()
+            print(perfilGuardado)
+            messages.add_message(request,
+                messages.SUCCESS,
+                'Usuario registrado con éxito :D'
+            )
+            return redirect('/')
+        context = {
+        'titulo':'Registrar',
+        'formulario2':formulario2
+        }
+        return render(
+            request,
+            'registroFacebook.html',
+            context
+        )
+    else:
+        messages.add_message(
+            request,
+            messages.ERROR,
+            'No puedes estar aquí'
+        )
+        return redirect('/registroF/')

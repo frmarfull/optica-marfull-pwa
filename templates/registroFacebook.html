@@ -1,0 +1,19 @@
+{% extends 'cuenta/base.html' %}
+{% block content %}
+<section class='container'>
+    {% block main %}
+    <article class='row'>
+        {% if formulario2.errors %}
+        {{ formulario2.errors }}
+        {% endif %}
+        <div class="card-panel">
+            <form action="/registroF/" method="post">
+                {% csrf_token %}
+                {{ formulario2 }}
+                <input type="submit" class="btn" value="Registrar">
+            </form>
+        </div> 
+    </article>
+    {% endblock main %}
+</section>
+{% endblock content %}  
