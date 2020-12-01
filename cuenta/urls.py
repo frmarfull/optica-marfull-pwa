@@ -8,7 +8,7 @@ urlpatterns = [
     path('iniciarSesion/',iniciarSesion, name="iniciar"),
     path('salir/',salir,name="Salir"),
     path('registroF/',registroUsuarioF,name="Registro Facebook"),
-    path('mostrarRegistroF/',mostarFormularioRegistroF,name="Formulario Registro")
+    path('/mostrarRegistroF/',mostarFormularioRegistroF,name="Formulario Registro")
     #path('/',, name=""), ejemplo #
    
     

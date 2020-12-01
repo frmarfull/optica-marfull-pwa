@@ -150,7 +150,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = join(BASE_DIR,'media')
 
 LOGIN_URL = 'iniciar'
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'Formulario Registro'
 LOGOUT_URL = 'salir'
 LOGOUT_REDIRECT_URL = '/'
 
